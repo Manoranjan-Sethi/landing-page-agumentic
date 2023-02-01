@@ -15,6 +15,10 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use("/", (req, res) => {
+  res.send("Welcome to the Server");
+});
+
 app.use("/api/user", require("./routes/user.routes"));
 app.use("/api/user/msg", require("./routes/msg.routes"));
 app.use("/api/admin/upload", require("./routes/adminUpload.routes"));
